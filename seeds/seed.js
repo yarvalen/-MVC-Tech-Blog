@@ -2,7 +2,7 @@ const sequelize = require('../config/connection')
 const { User, Comment, BlogPost } = require('../models')
 
 const userSeed = require('./userSeed.json')
-const blogSeed = require('./blogSeed.json')
+const blogPostSeed = require('./blogSeed.json')
 const commentSeed = require('./commentSeed.json')
 
 const seedDb = async() => {
@@ -17,8 +17,8 @@ const seedDb = async() => {
         individualHooks: true,
         returning: true
     });
-    
-    await BlogPost.bulkCreate(blogSeed,{
+
+    await BlogPost.bulkCreate(blogPostSeed,{
         individualHooks: true,
         returning: true
     });
